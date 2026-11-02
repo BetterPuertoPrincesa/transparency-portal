@@ -22,6 +22,7 @@ export default defineConfig({
   kindLabel: 'City and province',
   name: 'Puerto Princesa City and Palawan',
   shortName: 'Puerto Princesa and Palawan',
+  logo: '/brand/betterpuertoprincesa-logo.svg',
   operator: { name: 'BetterPuertoPrincesa', url: 'https://betterpuertoprincesa.org' },
   siteUrl: 'https://budget.betterpuertoprincesa.org',
   scope: {

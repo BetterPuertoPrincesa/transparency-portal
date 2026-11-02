@@ -1,36 +1,43 @@
 /* =============================================================
-   Theme: the budget.bettergov.ph tokens, so every portal reads as
-   part of the same family. Change the accent here if a fork must,
-   but keep the type roles.
+   Theme: BetterPuertoPrincesa's tokens (betterpuertoprincesa.org),
+   so the budget portal reads as part of the same site.
 
-   Republic of the Philippines brand guidelines, section 04:
-   "Figtree speaks. Inter works. Mono labels."
+   Bay blue (Puerto Princesa Bay, Honda Bay) is the colour of things
+   you can click. Balayong pink, from the city tree's blossoms, is
+   the signature for highlights. Young Serif speaks; Atkinson
+   Hyperlegible works; Atkinson Hyperlegible Mono labels.
    ============================================================= */
 
 :root {
-  /* Paper and ink */
+  /* Paper and ink: cool grays pulled toward the bay */
   --paper: #ffffff;
-  --paper-2: #f4f7fc;
-  --paper-3: #eceef2;
-  --rule: #d4d8e0;
-  --rule-soft: #e7eaef;
-  --ink: #11151c;
-  --ink-2: #2b3340;
-  --ink-3: #5b6373;
-  --ink-mute: #8a92a1;
+  --paper-2: #f8f9fa;
+  --paper-3: #f1f3f5;
+  --rule: #d5dade;
+  --rule-soft: #e6e9ec;
+  --ink: #17212b;
+  --ink-2: #2c3640;
+  --ink-3: #626d77;
+  --ink-mute: #87919a;
 
   /* Accents */
-  --accent: #0b4fd9;        /* BetterGov blue */
-  --accent-deep: #0a44bd;
-  --accent-soft: #e8efff;
-  --positive: #3a6b3a;
-  --negative: #b8341f;
+  --accent: #1f73ab;        /* Bay blue 500 */
+  --accent-deep: #134a71;   /* Bay blue 700 */
+  --accent-soft: #eef5fa;   /* Bay blue 50 */
+  --accent-line: #adcfe6;   /* Bay blue 200 */
+  --balayong: #d94b7f;      /* Balayong pink 500 */
+  --balayong-deep: #9c2652; /* Balayong pink 700 */
+  --balayong-soft: #fdf2f6; /* Balayong pink 50 */
+  --positive: #006939;
+  --negative: #b42525;
   --neutral: #8a7c5a;
 
   /* Type roles */
-  --font-hero: "Figtree", "Manrope", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --font-hero: "Young Serif", Georgia, "Times New Roman", serif;
+  --font-body: "Atkinson Hyperlegible Next", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-ui: var(--font-body);
+  --font-mono: "Atkinson Hyperlegible Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --hero-weight: 400;       /* Young Serif has one weight */
 
   /* Layout */
   --page: 1280px;
@@ -64,8 +71,8 @@ button { cursor: pointer; }
 
 h1, h2, h3 {
   font-family: var(--font-hero);
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: var(--hero-weight);
+  letter-spacing: -0.01em;
   line-height: 1.12;
   margin: 0;
 }
@@ -82,7 +89,7 @@ h1, h2, h3 {
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--balayong-deep);
   margin: 0 0 10px;
 }
 .eyebrow .sep { color: var(--ink-mute); padding: 0 6px; }
