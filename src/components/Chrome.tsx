@@ -1,6 +1,6 @@
 import { useMemo, type ReactNode } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { KIND_LABELS, shortNameOf } from '../config';
+import { kindLabelOf, shortNameOf } from '../config';
 import { usePortal } from '../lib/portal-context';
 import { date } from '../lib/format';
 import { NATIONAL_URL, SOURCE_CODE_URL } from '../lib/links';
@@ -54,7 +54,7 @@ export function Masthead() {
           {config.logo && <img src={config.logo} alt="" className="masthead-logo" />}
           <span>
             <span className="masthead-kicker">
-              {KIND_LABELS[config.kind]} <span aria-hidden="true">·</span> Budgets 2020–2027
+              {kindLabelOf(config)} <span aria-hidden="true">·</span> Budgets 2020–2027
             </span>
             <span className="masthead-name">{config.name}</span>
           </span>

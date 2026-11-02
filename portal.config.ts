@@ -1,32 +1,40 @@
 /**
  * This portal's configuration: the only file a fork needs to edit.
- * What each field means: src/config.ts. Generate one with `npm run setup`;
- * check it against the live API with `npm run check`.
+ * What each field means: src/config.ts. Check it against the live API with
+ * `npm run check`.
  *
- * This default is a worked example: the Province of Bohol. Its three DPWH
- * district engineering offices bring in every DPWH line listed under them;
- * the place name brings in lines from all four programs whose title names
- * Bohol (Central Office projects, farm-to-market roads, health facilities,
- * irrigation). More examples in examples/.
+ * Puerto Princesa City and the Province of Palawan, run by BetterPuertoPrincesa
+ * at https://budget.betterpuertoprincesa.org.
+ *
+ * Puerto Princesa is a highly urbanised city, independent of the province, but
+ * it has no legislative district or DPWH office of its own: it votes with, and
+ * is built for by, Palawan's 3rd district. So the scope is Palawan's three
+ * district engineering offices (every DPWH line listed under them), plus every
+ * line in the four programs whose title names Palawan or Puerto Princesa
+ * (Central Office projects, farm-to-market roads, health facilities,
+ * irrigation), kept to MIMAROPA.
  */
 import { defineConfig } from './src/config';
 
 export default defineConfig({
-  id: 'bohol-province',
+  id: 'puerto-princesa-palawan',
   kind: 'province',
-  name: 'Province of Bohol',
-  shortName: 'Bohol',
-  operator: { name: 'BetterGov.ph', url: 'https://bettergov.ph' },
-  // Where this example is deployed. Change it (or remove it) in your fork.
-  siteUrl: 'https://transparency-portal.bettergov.workers.dev',
+  kindLabel: 'City and province',
+  name: 'Puerto Princesa City and Palawan',
+  shortName: 'Puerto Princesa and Palawan',
+  operator: { name: 'BetterPuertoPrincesa', url: 'https://betterpuertoprincesa.org' },
+  siteUrl: 'https://budget.betterpuertoprincesa.org',
   scope: {
     offices: [
-      'Bohol 1st District Engineering Office',
-      'Bohol 2nd District Engineering Office',
-      'Bohol 3rd District Engineering Office',
+      'Palawan 1st District Engineering Office',
+      'Palawan 2nd District Engineering Office',
+      'Palawan 3rd District Engineering Office',
     ],
-    places: [{ label: 'Bohol', region: 'VII' }],
-    districts: ['leg:bohol:1st', 'leg:bohol:2nd', 'leg:bohol:3rd'],
+    places: [
+      { label: 'Puerto Princesa', region: 'MIMAROPA' },
+      { label: 'Palawan', region: 'MIMAROPA' },
+    ],
+    districts: ['leg:palawan:1st', 'leg:palawan:2nd', 'leg:palawan:3rd'],
     exclude: [],
   },
   reporting: { enabled: false },

@@ -48,6 +48,8 @@ export interface PortalConfig {
   /** Stable id, lowercase with hyphens. Sent with citizen reports: "bohol-province". */
   id: string;
   kind: PortalKind;
+  /** Overrides the kind's label in the masthead ("City and province"). */
+  kindLabel?: string;
   /** The LGU or office in full: "Province of Bohol". */
   name: string;
   /** Short form for headings: "Bohol". Defaults to `name`. */
@@ -123,6 +125,10 @@ export function configProblems(config: PortalConfig): string[] {
     if (!e.reason.trim()) problems.push(`exclusion "${e.key}" needs a reason; readers see it.`);
   }
   return problems;
+}
+
+export function kindLabelOf(config: PortalConfig): string {
+  return config.kindLabel?.trim() || KIND_LABELS[config.kind];
 }
 
 export function shortNameOf(config: PortalConfig): string {
